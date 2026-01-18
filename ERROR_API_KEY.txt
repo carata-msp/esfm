@@ -1,0 +1,36 @@
+⚠️ ERROR DE CONFIGURACIÓN
+========================
+
+La clave API de Supabase que proporcionaste no es válida:
+`sb_publishable_57vojYhoXEo0NxI8E0HWqw_nXifv6a`
+
+SOLUCIÓN:
+---------
+
+1. Ve a https://supabase.com/dashboard
+2. Selecciona tu proyecto
+3. Ve a Settings > API
+4. Copia una de estas claves:
+
+   a) **anon/public key** - Para operaciones del cliente
+   b) **service_role key** - Para operaciones del servidor (API routes)
+
+5. Actualiza el archivo `.env.local` con la clave correcta:
+
+```env
+# Para operaciones del cliente y servidor con RLS deshabilitado:
+NEXT_PUBLIC_SUPABASE_URL=https://pjzfrnhnczoqcmehsmzm.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGc... (tu clave anon real)
+
+# O para operaciones del servidor (recomendado):
+NEXT_PUBLIC_SUPABASE_URL=https://pjzfrnhnczoqcmehsmzm.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGc... (tu clave anon)
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGc... (tu service role key)
+```
+
+6. Reinicia el servidor:
+```bash
+npm run dev
+```
+
+NOTA: La clave debe comenzar con "eyJ" (JWT token), no con "sb_publishable_"

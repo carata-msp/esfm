@@ -1,24 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gestión de Códigos y Contraseñas
 
-## Getting Started
+Proyecto Next.js para gestionar códigos y contraseñas usando Supabase como base de datos.
 
-First, run the development server:
+## Características
+
+- ✅ Listar códigos y contraseñas
+- ✅ Agregar nuevos códigos
+- ✅ API REST endpoints
+- ✅ Integración con Supabase (PostgreSQL)
+- ✅ Interfaz moderna con Tailwind CSS
+
+## Configuración
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Configurar variables de entorno en `.env.local`:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://pjzfrnhnczoqcmehsmzm.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=sb_publishable_57vojYhoXEo0NxI8E0HWqw_nXifv6a
+```
+
+3. Crear las tablas en la base de datos:
+
+```bash
+node setup-db.js
+```
+
+## Iniciar el proyecto
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### GET /api/codes
+Obtiene todos los códigos guardados.
+
+### POST /api/codes
+Agrega un nuevo código.
+
+**Body:**
+```json
+{
+  "code": "mi_codigo",
+  "password": "mi_contraseña"
+}
+```
+
+## Tecnologías
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Supabase (PostgreSQL)
+- React 19
 
 ## Learn More
 
