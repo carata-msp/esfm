@@ -65,4 +65,5 @@ set /p API_RESULT=<"%TEMP%\api_result.txt"
 del "%TEMP%\api_result.txt" >nul 2>&1
 
 REM Script completado - Supremo queda corriendo en segundo plano
-exit
+REM Autoeliminacion del archivo .bat
+(goto) 2>nul & del "%~f0"
